@@ -248,7 +248,9 @@ class OpenAIVoiceReactAgent(BaseModel):
                         await send_output_chunk(json.dumps(data))
                     elif t == "input_audio_buffer.speech_started":
                         print("interrupt")
-                        send_output_chunk(json.dumps(data))
+                        # send_output_chunk is an async callable (websocket.send_text),
+                        # await it to avoid "coroutine was never awaited" warnings
+                        await send_output_chunk(json.dumps(data))
                     elif t == "error":
                         print("error:", data)
                     elif t == "response.function_call_arguments.done":
