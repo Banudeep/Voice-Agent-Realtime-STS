@@ -9,6 +9,7 @@ dependencies = [
     "langgraph>=0.2.32",
     "starlette>=0.39.2",
     "uvicorn[standard]>=0.31.0",
+    "websockets<12",
     # Additional runtime dependencies required by server tools
     "geocoder>=1.38.1",
     "httpx>=0.24.1",

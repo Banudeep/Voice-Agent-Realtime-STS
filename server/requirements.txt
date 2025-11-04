@@ -1,5 +1,6 @@
 uvicorn[standard]>=0.31.0
 starlette>=0.39.2
+websockets<12
 langchain-community>=0.3.1
 langgraph>=0.2.32
 geocoder>=1.38.1
